@@ -1,0 +1,48 @@
+unmanaged implementation in class zbp_cit_bh_i_22ec086 unique;
+strict ( 2 );
+
+define behavior for ZCIT_BH_I_22EC086 //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) BillUuid;
+  association _Items { create; }
+  mapping for zcit_b_h_22ec086
+  {
+    BillUuid = bill_uuid;
+    BillNumber = bill_number;
+    CustomerName = customer_name;
+    BillingDate = billing_date;
+    TotalAmount = total_amount;
+    Currency = currency;
+    PaymentStatus = payment_status;
+  }
+}
+
+define behavior for ZCIT_BI_IN_22EC086 //alias <alias_name>
+//late numbering
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) BillUuid, ItemUuid;
+  association _Header;
+  mapping for zcit_b_i_22ec086
+  {
+    ItemUuid = item_uuid;
+    BillUuid = bill_uuid;
+    ItemPosition = item_position;
+    ProductId = product_id;
+    Quantity = quantity;
+    UnitPrice = unit_price;
+    Subtotal = subtotal;
+  }
+
+}

@@ -1,0 +1,25 @@
+@Metadata.layer: #CORE
+annotate entity ZCIT_BI_CV_22EC086 with
+{
+  @UI.facet: [{ id: 'ItemDetails', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Item Details', position: 10 }]
+
+  @UI: { lineItem: [{ position: 10 }], identification: [{ position: 10, label: 'Position' }] }
+  @EndUserText.label: 'Position'
+  ItemPosition;
+
+  @UI: { lineItem: [{ position: 20 }], identification: [{ position: 20, label: 'Product ID' }] }
+  @EndUserText.label: 'Product ID'
+  ProductId;
+
+  @UI: { lineItem: [{ position: 30 }], identification: [{ position: 30, label: 'Quantity' }] }
+  @EndUserText.label: 'Quantity'
+  Quantity;
+
+  @UI: { lineItem: [{ position: 40 }], identification: [{ position: 40, label: 'Unit Price' }] }
+  @EndUserText.label: 'Unit Price'
+  UnitPrice;
+
+  @UI: { lineItem: [{ position: 50 }], identification: [{ position: 50, label: 'Subtotal' }] }
+  @EndUserText.label: 'Subtotal'
+  Subtotal;
+}

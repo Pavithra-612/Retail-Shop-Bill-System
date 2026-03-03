@@ -1,0 +1,48 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Billing Header',
+    typeNamePlural: 'Billing Headers',
+    title: { type: #STANDARD, value: 'BillNumber' }
+  }
+}
+annotate view ZCIT_BH_C_22EC086 with
+{
+  @UI.facet: [
+    { id: 'GeneralInfo', 
+      purpose: #STANDARD, 
+      type: #IDENTIFICATION_REFERENCE, 
+      label: 'General Information', 
+      position: 10 },
+    { id: 'Items', 
+      purpose: #STANDARD, 
+      type: #LINEITEM_REFERENCE, 
+      label: 'Bill Items', 
+      position: 20, 
+      targetElement: '_Items' }
+  ]
+
+  @UI: { lineItem: [{ position: 10 }], identification: [{ position: 10, label: 'Bill Number' }] }
+  @EndUserText.label: 'Bill Number'
+  BillNumber;
+
+  @UI: { lineItem: [{ position: 20 }], identification: [{ position: 20, label: 'Customer Name' }] }
+  @EndUserText.label: 'Customer Name'
+  CustomerName;
+
+  @UI: { lineItem: [{ position: 30 }], identification: [{ position: 30, label: 'Billing Date' }] }
+  @EndUserText.label: 'Billing Date'
+  BillingDate;
+
+  @UI: { lineItem: [{ position: 40 }], identification: [{ position: 40, label: 'Total Amount' }] }
+  @EndUserText.label: 'Total Amount'
+  TotalAmount;
+
+  @UI: { identification: [{ position: 50 }] }
+  @EndUserText.label: 'Currency'
+  Currency;
+
+  @UI: { lineItem: [{ position: 60 }], identification: [{ position: 60, label: 'Payment Status' }] }
+  @EndUserText.label: 'Payment Status'
+  PaymentStatus;
+}

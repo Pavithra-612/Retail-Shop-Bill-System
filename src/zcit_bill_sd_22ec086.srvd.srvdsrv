@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition for bill system'
+define service ZCIT_BILL_SD_22EC086 {
+  expose ZCIT_BH_C_22EC086  as Header;
+  expose ZCIT_BI_CV_22EC086 as Items;
+}
